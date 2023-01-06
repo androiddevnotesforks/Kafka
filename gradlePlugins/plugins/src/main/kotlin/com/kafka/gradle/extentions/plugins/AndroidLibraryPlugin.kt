@@ -19,7 +19,7 @@ class AndroidLibraryPlugin : Plugin<Project> {
         project.pluginManager.apply(JacocoReportPlugin::class.java)
 
         project.extensions.configure<LibraryExtension>("android") {
-            it.compileSdk = Configurations.Android.compileSdkVersion
+            it.compileSdk = Configurations.Android.compileSdk
 
             it.defaultConfig {
                 minSdk = Configurations.Android.minSdkVersion
