@@ -2,7 +2,7 @@ package com.kafka.gradle.extentions.plugins
 
 import com.android.build.gradle.LibraryExtension
 import com.kafka.gradle.extentions.Configurations
-import com.roadrunner.gradle.extentions.getDep
+import com.kafka.gradle.extentions.getDep
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -16,10 +16,9 @@ class AndroidLibraryPlugin : Plugin<Project> {
         project.pluginManager.apply("com.android.library")
         project.pluginManager.apply("kotlin-android")
         project.pluginManager.apply("org.gradle.android.cache-fix")
-        project.pluginManager.apply(JacocoReportPlugin::class.java)
 
         project.extensions.configure<LibraryExtension>("android") {
-            it.compileSdk = Configurations.Android.compileSdkVersion
+            it.compileSdk = Configurations.Android.compileSdk
 
             it.defaultConfig {
                 minSdk = Configurations.Android.minSdkVersion
